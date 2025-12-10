@@ -15,7 +15,7 @@ cd /etc/postfix/
 
 #Dirigirse a todas las configuraciones de Postfix
 
-vi main.cf
+sudo vi main.cf
 
 #Agregamos hostname
 
@@ -54,7 +54,7 @@ smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 
 #Agregamos la credenciales de autenticación
 
-vi sasl_passwd
+sudo vi sasl_passwd
 
 #Dentro de la misma ponemos las credenciales
 
@@ -62,23 +62,23 @@ vi sasl_passwd
 
 #Agregarle permisos
 
-postmap sasl_passwd
+sudo postmap sasl_passwd
 
 #Poner escritura y lectura solo para root
 
-chmod 600 sasl_passwd
+sudo chmod 600 sasl_passwd
 
 #Inicializamos el sistema de Postfix
 
-systemctl start postfix
+sudo systemctl start postfix
 
 #Verificamos el estatus
 
-systemctl status postfix
+sudo systemctl status postfix
 
 #Creamos el contenido del correo que vamos a enviar
 
-vi mensaje.txt
+sudo vi mensaje.txt
 
 #Contenido
 
@@ -93,5 +93,6 @@ Laboratorio 4, Sistemas Operativos 3.
 mail -s "Prueba" neurymonteromejia01@gmail.com < mensaje.txt
 
 #Lo enviamos al maestro
+
 
 mail -s "MambruSeFueALaGuerra" os3conadrian@gmail.com < mensaje.txt
