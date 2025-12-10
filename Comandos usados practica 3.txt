@@ -5,7 +5,7 @@ INSTALAR UN SERVIDOR DE IMPRESIÓN
 ============================================
 
 
-# Instalamos el servidor de impresión CUPS en Rocky Linux:
+# Instalamos el servidor de impresión CUPS en RHEL:
 
 sudo dnf install cups -y
 
@@ -53,5 +53,6 @@ cupsctl --remote-admin --remote-any --share-printers
 # En Windows vamos a Settings > Devices > Printers & scanners > Add printer > The printer I want isn’t listed > Select a shared printer by name, y pegamos la URL (quitando la "s" de https si la tiene).
 
 # Finalizamos la instalación y procedemos a imprimir un documento: Abrimos Word, escribimos un texto, presionamos Ctrl+P, elegimos la impresora creada, y hacemos clic en Print.
+
 
 # Verificamos en la interfaz web de CUPS accediendo a http://192.168.0.16:631/printers/tuimpresora y visualizando los trabajos completados. También se puede visualizar en el servidor que el PDF fue generado correctamente en la ruta: /var/spool/cups-pdf/ANONYMOUS/
